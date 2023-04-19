@@ -113,5 +113,6 @@
             "PhpOffice\\PhpSpreadsheetTests\\": "tests/PhpSpreadsheetTests",
             "PhpOffice\\PhpSpreadsheetInfra\\": "infra"
         }
-    }
+    },
+    "version": "1.1.1"
 }

@@ -116,7 +116,7 @@ abstract class Pdf extends Html
      *
      * @param Spreadsheet $spreadsheet Spreadsheet object
      */
-    public function __construct(Spreadsheet $spreadsheet)
+    public function __construct(Spreadsheet $spreadsheet, $rendererConfigs=[])
     {
         parent::__construct($spreadsheet);
         //$this->setUseInlineCss(true);

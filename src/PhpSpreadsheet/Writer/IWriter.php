@@ -15,7 +15,7 @@ interface IWriter
      *
      * @param Spreadsheet $spreadsheet The spreadsheet that we want to save using this Writer
      */
-    public function __construct(Spreadsheet $spreadsheet);
+    public function __construct(Spreadsheet $spreadsheet, $rendererConfigs=[]);
 
     /**
      * Write charts in workbook?

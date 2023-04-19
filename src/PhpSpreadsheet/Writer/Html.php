@@ -151,7 +151,7 @@ class Html extends BaseWriter
     /**
      * Create a new HTML.
      */
-    public function __construct(Spreadsheet $spreadsheet)
+    public function __construct(Spreadsheet $spreadsheet, $rendererConfigs=[])
     {
         $this->spreadsheet = $spreadsheet;
         $this->defaultFont = $this->spreadsheet->getDefaultStyle()->getFont();
