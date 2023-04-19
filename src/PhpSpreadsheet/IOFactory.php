@@ -57,7 +57,7 @@ abstract class IOFactory
     /**
      * Create Writer\IWriter.
      */
-    public static function createWriter(Spreadsheet $spreadsheet, string $writerType): IWriter
+    public static function createWriter(Spreadsheet $spreadsheet, string $writerType, array $writerConfigs=[]): IWriter
     {
         if (!isset(self::$writers[$writerType])) {
             throw new Writer\Exception("No writer found for type $writerType");
@@ -67,7 +67,7 @@ abstract class IOFactory
         /** @var IWriter */
         $className = self::$writers[$writerType];
 
-        return new $className($spreadsheet);
+        return new $className($spreadsheet, $writerConfigs);
     }
 
     /**

@@ -11,6 +11,19 @@ class Mpdf extends Pdf
     /** @var bool */
     protected $isMPdf = true;
 
+    protected $mpdfConfigs;
+
+    /**
+     * Create a new PDF Writer instance.
+     *
+     * @param Spreadsheet $spreadsheet Spreadsheet object
+     */
+    public function __construct(Spreadsheet $spreadsheet, array $mpdfConfigs=[])
+    {
+        parent::__construct($spreadsheet);
+        $this->mpdfConfigs = $mpdfConfigs;
+    }
+
     /**
      * Gets the implementation of external PDF library that should be used.
      *
@@ -20,7 +33,7 @@ class Mpdf extends Pdf
      */
     protected function createExternalWriterInstance($config)
     {
-        return new \Mpdf\Mpdf($config);
+        return new \Mpdf\Mpdf(array_merge($this->mpdfConfigs, $config));
     }
 
     /**
