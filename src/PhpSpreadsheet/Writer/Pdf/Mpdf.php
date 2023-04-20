@@ -5,6 +5,7 @@ namespace PhpOffice\PhpSpreadsheet\Writer\Pdf;
 use PhpOffice\PhpSpreadsheet\Worksheet\PageSetup;
 use PhpOffice\PhpSpreadsheet\Writer\Html;
 use PhpOffice\PhpSpreadsheet\Writer\Pdf;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 class Mpdf extends Pdf
 {
@@ -18,10 +19,10 @@ class Mpdf extends Pdf
      *
      * @param Spreadsheet $spreadsheet Spreadsheet object
      */
-    public function __construct(Spreadsheet $spreadsheet, array $mpdfConfigs=[])
+    public function __construct(Spreadsheet $spreadsheet, array $rendererConfigs=[])
     {
         parent::__construct($spreadsheet);
-        $this->mpdfConfigs = $mpdfConfigs;
+        $this->mpdfConfigs = $rendererConfigs;
     }
 
     /**
